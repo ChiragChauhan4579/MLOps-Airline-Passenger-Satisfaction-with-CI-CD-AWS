@@ -24,7 +24,7 @@ def validate_passenger_data(df):
         suite = data_integrity()
         result = suite.run(dataset)
         # Save or print the result
-        result.save_as_html('C:/Users/Chirag/Desktop/MLOps/MLOps-Airline-Passeneger-Satisfaction/reports/validation_report.html')
+        result.save_as_html('C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/reports/validation_report.html')
         print("Validation completed! Report saved as 'validation_report.html'.")
         # Return success flag
         return True
@@ -41,7 +41,7 @@ def datadrift(baseline_data,new_data):
         # Generate the report
         data_drift_report.run(reference_data=baseline_data, current_data=new_data)
         # Visualize the report (opens in the browser or can be saved as HTML)
-        data_drift_report.save_html('C:/Users/Chirag/Desktop/MLOps/MLOps-Airline-Passeneger-Satisfaction/reports/data_drift_report.html')
+        data_drift_report.save_html('C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/reports/data_drift_report.html')
         report_json = json.loads(data_drift_report.json())
         # print(report_json['metrics'][0]['result']['number_of_drifted_columns'])
         # print(report_json['metrics'][0]['result']['dataset_drift'])
@@ -56,17 +56,23 @@ def datadrift(baseline_data,new_data):
 @flow
 def workflow():
 
-    file_path = 'C:/Users/Chirag/Desktop/MLOps/MLOps-Airline-Passeneger-Satisfaction/data/test.csv'
+    file_path = 'C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/test.csv'
     df = pd.read_csv(file_path)
-
+    try:
+        df.drop(columns=['id'],inplace=True)
+    except Exception as e:
+        pass
     data_validity = validate_passenger_data(df)
 
     if data_validity:
 
         print("Data Validation Passed! Checking for Data Drift")
 
-        baseline_data = pd.read_csv('C:/Users/Chirag/Desktop/MLOps/MLOps-Airline-Passeneger-Satisfaction/data/train.csv')
-
+        baseline_data = pd.read_csv('C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/train.csv')
+        try:
+            baseline_data.drop(columns=['id'],inplace=True)
+        except Exception as e:
+            pass
         datadrift_check = datadrift(baseline_data,df)
 
         if datadrift_check:

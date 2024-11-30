@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/extra-code-files/mlruns/186525511232777994/384ed9368b3840168d990053534f09d4/artifacts
+end_time: 1732974559897
+entry_point_name: ''
+experiment_id: '186525511232777994'
+lifecycle_stage: active
+run_id: 384ed9368b3840168d990053534f09d4
+run_name: traveling-gnu-807
+run_uuid: 384ed9368b3840168d990053534f09d4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732974550797
+status: 3
+tags: []
+user_id: Chirag
