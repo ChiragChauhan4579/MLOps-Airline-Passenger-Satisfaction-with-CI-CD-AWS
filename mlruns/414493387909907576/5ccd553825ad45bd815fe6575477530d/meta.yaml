@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/mlruns/414493387909907576/5ccd553825ad45bd815fe6575477530d/artifacts
+end_time: 1733134716091
+entry_point_name: ''
+experiment_id: '414493387909907576'
+lifecycle_stage: active
+run_id: 5ccd553825ad45bd815fe6575477530d
+run_name: bittersweet-foal-799
+run_uuid: 5ccd553825ad45bd815fe6575477530d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733134705716
+status: 3
+tags: []
+user_id: Chirag

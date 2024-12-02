@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/mlruns/414493387909907576/54392f1dec684a6dbe786ebaa83e9d4c/artifacts
+end_time: 1733134349903
+entry_point_name: ''
+experiment_id: '414493387909907576'
+lifecycle_stage: active
+run_id: 54392f1dec684a6dbe786ebaa83e9d4c
+run_name: spiffy-dove-835
+run_uuid: 54392f1dec684a6dbe786ebaa83e9d4c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733134341424
+status: 4
+tags: []
+user_id: Chirag

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/mlruns/414493387909907576/167a6307794f441592703ea80b53f393/artifacts
+end_time: 1733134591467
+entry_point_name: ''
+experiment_id: '414493387909907576'
+lifecycle_stage: active
+run_id: 167a6307794f441592703ea80b53f393
+run_name: big-carp-455
+run_uuid: 167a6307794f441592703ea80b53f393
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733134584186
+status: 4
+tags: []
+user_id: Chirag
