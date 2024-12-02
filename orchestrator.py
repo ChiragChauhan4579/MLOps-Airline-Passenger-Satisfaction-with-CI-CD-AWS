@@ -98,27 +98,28 @@ def model_retain():
         X_test[columns_to_scale] = scaler.transform(X_test[columns_to_scale])
 
         # MLflow experiment tracking
-        mlflow.set_experiment("airline_satisfaction_prediction")
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        mlflow.set_experiment(f"airline_satisfaction_prediction_{current_date}")
 
         # Train and evaluate the XGBoost classifier
         with mlflow.start_run():
             xgb_clf = XGBClassifier(random_state=42)
             xgb_clf.fit(X_train, y_train)
-            
+
             y_pred_xgb = xgb_clf.predict(X_test)
-            
+
             # Calculate metrics
             accuracy_xgb = accuracy_score(y_test, y_pred_xgb)
             precision = precision_score(y_test, y_pred_xgb)
             recall = recall_score(y_test, y_pred_xgb)
             f1 = f1_score(y_test, y_pred_xgb)
-            
+
             # Log metrics to MLflow
             mlflow.log_metric("accuracy", accuracy_xgb)
             mlflow.log_metric("precision", precision)
             mlflow.log_metric("recall", recall)
             mlflow.log_metric("f1_score", f1)
-            
+
             print(f'XGBoost Accuracy: {accuracy_xgb * 100:.2f}%')
             print(classification_report(y_test, y_pred_xgb))
             print("Confusion Matrix:")
@@ -126,7 +127,7 @@ def model_retain():
             print(f"Precision: {precision:.2f}")
             print(f"Recall: {recall:.2f}")
             print(f"F1-Score: {f1:.2f}")
-            
+
             # Log model artifacts
             mlflow.sklearn.log_model(xgb_clf, "xgboost_model")
             mlflow.log_artifact("C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/reports/data_drift_report.html","Data Drift report")
@@ -136,10 +137,10 @@ def model_retain():
             if not os.path.exists("best_f1_score.txt") or f1 > float(open("best_f1_score.txt").read()):
                 with open("best_f1_score.txt", "w") as f:
                     f.write(str(f1))
-                dump(xgb_clf, 'XGBoost_model.joblib')
-                dump(encoder, 'encoder.joblib')
-                dump(scaler, 'scaler.joblib')
-                dump(le, 'label_encoder.joblib')
+                dump(xgb_clf, 'C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/XGBoost_model.joblib')
+                dump(encoder, 'C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/encoder.joblib')
+                dump(scaler, 'C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/scaler.joblib')
+                dump(le, 'C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/label_encoder.joblib')
                 print("New best model saved based on F1 score.")
             else:
                 print("Model not better than the last one!")
