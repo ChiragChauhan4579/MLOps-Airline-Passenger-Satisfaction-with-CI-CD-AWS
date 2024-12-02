@@ -8,7 +8,6 @@ Done:
     Script 2: track mlflow, train a new model - XGB, on best model apply hyperparameter tuning create
 
 Next:
-    Script 3: Wrap script 2 in dvc the data loading, data preprocess and model training
-    Script 5: Prefect with Docker
-    Script 6: Add new data push with streamlit/some storage - add in prefect flow (Script 1)
-    Script 7: CI/CD on huggingface
+    Script 3: Prefect with Docker
+    Script 4: Add new data push with streamlit/some storage - add in prefect flow (Script 1)
+    Script 5: CI/CD on huggingface

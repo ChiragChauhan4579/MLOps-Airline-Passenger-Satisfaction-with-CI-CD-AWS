@@ -1,13 +1,13 @@
 import os
 import mlflow
-import numpy as np 
+import numpy as np
 import pandas as pd
 from joblib import dump , load
 from xgboost import XGBClassifier
 from sklearn.preprocessing import LabelEncoder,OrdinalEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, classification_report ,confusion_matrix , precision_score, recall_score, f1_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report , confusion_matrix , precision_score, recall_score, f1_score, classification_report
 
 # Load dataset
 df = pd.read_csv("C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/train.csv")
@@ -68,7 +68,7 @@ with mlflow.start_run():
     print(f"Precision: {precision:.2f}")
     print(f"Recall: {recall:.2f}")
     print(f"F1-Score: {f1:.2f}")
-    
+
     # Log model artifacts
     mlflow.sklearn.log_model(xgb_clf, "xgboost_model")
     

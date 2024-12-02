@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/src/mlruns/418992146919298012/2b2c010c85db4ab49d9cde04a269546d/artifacts
+end_time: 1733153453045
+entry_point_name: ''
+experiment_id: '418992146919298012'
+lifecycle_stage: active
+run_id: 2b2c010c85db4ab49d9cde04a269546d
+run_name: blushing-gull-173
+run_uuid: 2b2c010c85db4ab49d9cde04a269546d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733153439775
+status: 3
+tags: []
+user_id: Chirag

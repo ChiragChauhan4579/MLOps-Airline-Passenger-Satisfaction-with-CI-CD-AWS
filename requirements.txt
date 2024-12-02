@@ -11,5 +11,4 @@ scikit_learn==1.3.2
 xgboost==2.1.3
 uvicorn
 openpyxl
-dvc
 prefect==3.1.4

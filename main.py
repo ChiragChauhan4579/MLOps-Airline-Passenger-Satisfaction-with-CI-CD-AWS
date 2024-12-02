@@ -7,10 +7,11 @@ from joblib import load
 # Initialize FastAPI app
 app = FastAPI()
 
+ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
 # Load the models and transformers during startup
-encoder = load('./model/encoder.joblib')
-scaler = load('./model/scaler.joblib')
-model = load('./model/XGBoost_model.joblib')
+encoder = load(ROOT_URL + 'model/encoder.joblib')
+scaler = load(ROOT_URL + 'model/scaler.joblib')
+model = load(ROOT_URL + 'model/XGBoost_model.joblib')
 
 # Define categorical and numerical columns
 categorical_columns = ['Gender', 'Type of Travel', 'Customer Type', 'Class']
