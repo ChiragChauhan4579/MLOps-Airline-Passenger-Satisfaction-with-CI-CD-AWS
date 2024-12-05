@@ -8,29 +8,15 @@ from datetime import datetime
 from evidently.report import Report
 from evidently.metrics import DataDriftTable
 import json
-import mlflow
-import numpy as np 
-from joblib import dump , load
-from xgboost import XGBClassifier
-from sklearn.preprocessing import LabelEncoder,OrdinalEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, classification_report ,confusion_matrix , precision_score, recall_score, f1_score, classification_report
 
 docker_flag = 1
 
 if docker_flag == 1:
-    os.environ['PREFECT_API_URL'] = "http://host.docker.internal/api"
+    os.environ['PREFECT_API_URL'] = "http://127.0.0.1:4200/api"
     ROOT_URL = "/app/"
-    ENDPOINT_URL = "http://host.docker.internal:8000/"
-    LATEST_ENDPOINT = f"{ENDPOINT_URL}/get_train_latest"
-    PREVIOUS_ENDPOINT = f"{ENDPOINT_URL}/get_train_previous"
 else:
     os.environ['PREFECT_API_URL'] = "http://127.0.0.1:4200/api"
     ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
-    ENDPOINT_URL = "http://127.0.0.1:8000/"
-    LATEST_ENDPOINT = f"{ENDPOINT_URL}/get_train_latest"
-    PREVIOUS_ENDPOINT = f"{ENDPOINT_URL}/get_train_previous"
 
 # Function to validate passenger data using Deepchecks
 @task
@@ -45,7 +31,8 @@ def validate_passenger_data(df):
         suite = data_integrity()
         result = suite.run(dataset)
         # Save or print the result
-        result.save_as_html(ROOT_URL + 'reports/validation_report.html')
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        result.save_as_html(ROOT_URL + f'reports/validation_report_{current_date}.html')
         print("Validation completed! Report saved as 'validation_report.html'.")
         # Return success flag
         return True
@@ -62,7 +49,8 @@ def datadrift(baseline_data,new_data):
         # Generate the report
         data_drift_report.run(reference_data=baseline_data, current_data=new_data)
         # Visualize the report (opens in the browser or can be saved as HTML)
-        data_drift_report.save_html(ROOT_URL + 'reports/data_drift_report.html')
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        data_drift_report.save_html(ROOT_URL + f'reports/data_drift_report_{current_date}.html')
         report_json = json.loads(data_drift_report.json())
         # print(report_json['metrics'][0]['result']['number_of_drifted_columns'])
         # print(report_json['metrics'][0]['result']['dataset_drift'])
@@ -129,7 +117,7 @@ def workflow():
 if __name__ == "__main__":
     workflow.serve(
         name="test",
-        cron="*/1 * * * *",
+        cron="0 0 */2 * *",
     )
 
 # prefect server start

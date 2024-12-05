@@ -36,7 +36,7 @@ with mlflow.start_run():
     precision = precision_score(y_test, y_pred_xgb)
     recall = recall_score(y_test, y_pred_xgb)
     f1 = f1_score(y_test, y_pred_xgb)
-    
+
     # Log metrics to MLflow
     mlflow.log_metric("accuracy", accuracy_xgb)
     mlflow.log_metric("precision", precision)

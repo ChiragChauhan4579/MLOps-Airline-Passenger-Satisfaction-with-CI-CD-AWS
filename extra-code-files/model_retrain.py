@@ -10,7 +10,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, classification_report , confusion_matrix , precision_score, recall_score, f1_score, classification_report
 
 # Load dataset
-df = pd.read_csv("C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/train.csv")
+df = pd.read_csv("C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/raw/train_latest.csv")
+df = df.drop('id',axis=1)
 
 # Define categorical and target columns
 categorical_columns = ['Gender', 'Type of Travel', 'Customer Type', 'Class']
@@ -76,7 +77,7 @@ with mlflow.start_run():
     if not os.path.exists("best_f1_score.txt") or f1 > float(open("best_f1_score.txt").read()):
         with open("best_f1_score.txt", "w") as f:
             f.write(str(f1))
-        dump(xgb_clf, 'best_XGBoost_model.joblib')
+        dump(xgb_clf, 'XGBoost_model.joblib')
         dump(encoder, 'encoder.joblib')
         dump(scaler, 'scaler.joblib')
         dump(le, 'label_encoder.joblib')

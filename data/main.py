@@ -69,4 +69,4 @@ async def add_train_data(file: UploadFile):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8002)
+    uvicorn.run(app, host="0.0.0.0", port=8001)

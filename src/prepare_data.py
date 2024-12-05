@@ -13,6 +13,11 @@ else:
 # Load dataset
 df = pd.read_csv(ROOT_URL + "data/raw/train_latest.csv")
 
+try:
+    df = df.drop('id', axis=1)
+except:
+    pass
+
 categorical_columns = ['Gender', 'Type of Travel', 'Customer Type', 'Class']
 target_column = 'satisfaction'
 columns_to_scale = ['Flight Distance', 'Age', 'Departure Delay in Minutes', 'Arrival Delay in Minutes']
