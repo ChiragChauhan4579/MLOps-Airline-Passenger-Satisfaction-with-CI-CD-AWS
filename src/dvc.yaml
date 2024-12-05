@@ -1,26 +1,26 @@
 stages:
   prepare_data:
-    cmd: python "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/src/prepare_data.py"
+    cmd: python "/app/src/prepare_data.py"
     deps:
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/raw/train_latest.csv"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/src/prepare_data.py"
+      - "/app/data/raw/train_latest.csv"
+      - "/app/src/prepare_data.py"
     outs:
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/X_train.csv"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/X_test.csv"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/y_train.csv"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/y_test.csv"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/encoder.joblib"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/label_encoder.joblib"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/scaler.joblib"
+      - "/app/data/processed/X_train.csv"
+      - "/app/data/processed/X_test.csv"
+      - "/app/data/processed/y_train.csv"
+      - "/app/data/processed/y_test.csv"
+      - "/app/model/encoder.joblib"
+      - "/app/model/label_encoder.joblib"
+      - "/app/model/scaler.joblib"
 
   train_model:
-    cmd: python "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/src/train_model.py"
+    cmd: python "/app/src/train_model.py"
     deps:
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/X_train.csv"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/X_test.csv"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/y_train.csv"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/y_test.csv"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/src/train_model.py"
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/src/best_f1_score.txt"
+      - "/app/data/processed/X_train.csv"
+      - "/app/data/processed/X_test.csv"
+      - "/app/data/processed/y_train.csv"
+      - "/app/data/processed/y_test.csv"
+      - "/app/src/train_model.py"
+      - "/app/src/best_f1_score.txt"
     outs:
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/XGBoost_model.joblib"
+      - "/app/model/XGBoost_model.joblib"

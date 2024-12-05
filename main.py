@@ -7,7 +7,13 @@ from joblib import load
 # Initialize FastAPI app
 app = FastAPI()
 
-ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
+docker_flag = 1
+
+if docker_flag == 1:
+    ROOT_URL = "/app/"
+else:
+    ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
+    
 # Load the models and transformers during startup
 encoder = load(ROOT_URL + 'model/encoder.joblib')
 scaler = load(ROOT_URL + 'model/scaler.joblib')
@@ -66,3 +72,7 @@ async def predict_satisfaction(passenger_data: List[PassengerData]):
         return {"satisfaction": predictions.tolist()[0]}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+    
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8001)

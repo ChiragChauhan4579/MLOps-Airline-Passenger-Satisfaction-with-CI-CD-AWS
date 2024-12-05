@@ -1,7 +1,6 @@
 import os
 import subprocess
 from prefect import task, flow
-from prefect.client.schemas.schedules import IntervalSchedule
 import pandas as pd
 from deepchecks.tabular import Dataset
 from deepchecks.tabular.suites import data_integrity
@@ -18,8 +17,20 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, classification_report ,confusion_matrix , precision_score, recall_score, f1_score, classification_report
 
-os.environ['PREFECT_API_URL'] = "http://127.0.0.1:4200/api"
-ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
+docker_flag = 1
+
+if docker_flag == 1:
+    os.environ['PREFECT_API_URL'] = "http://host.docker.internal/api"
+    ROOT_URL = "/app/"
+    ENDPOINT_URL = "http://host.docker.internal:8000/"
+    LATEST_ENDPOINT = f"{ENDPOINT_URL}/get_train_latest"
+    PREVIOUS_ENDPOINT = f"{ENDPOINT_URL}/get_train_previous"
+else:
+    os.environ['PREFECT_API_URL'] = "http://127.0.0.1:4200/api"
+    ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
+    ENDPOINT_URL = "http://127.0.0.1:8000/"
+    LATEST_ENDPOINT = f"{ENDPOINT_URL}/get_train_latest"
+    PREVIOUS_ENDPOINT = f"{ENDPOINT_URL}/get_train_previous"
 
 # Function to validate passenger data using Deepchecks
 @task
@@ -79,7 +90,7 @@ def model_retrain():
             print("Error executing DVC repro:")
             print(result.stderr)
             return False
-        
+
     except Exception as e:
         print(f"An error occurred during Model Retraining: {e}")
         return False

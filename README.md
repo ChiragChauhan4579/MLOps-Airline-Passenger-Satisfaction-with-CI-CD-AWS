@@ -1,6 +1,6 @@
 conda activate mlops_ray
 
-MLOps ML with mlflow, dvc, evidently, model retraining, orchestration prefect, docker,CI/CD (cml) github actions on huggingface
+MLOps ML with mlflow, dvc, evidently, model retraining, orchestration prefect, docker,CI/CD (cml) github actions
 
 Done:
     Model and FastAPI
@@ -10,6 +10,6 @@ Done:
     Script 4: DVC
 
 Next:
-    Script 5: Prefect,MLflow,fastapi with Docker https://chatgpt.com/share/67507108-b908-800a-9bb6-4648707bf238
-    Script 6: Script 3 - add in prefect flow (Script 1)
-    Script 7: CI/CD on huggingface
+    Fix training data and model prediction
+    Script 5: Prefect,MLflow,fastapi with Docker
+    Script 6: CI/CD AWS with github actions

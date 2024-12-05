@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/src/mlruns/468404460354366993/2f33c5cfe7874f94893021842489f884/artifacts
+end_time: 1733394379534
+entry_point_name: ''
+experiment_id: '468404460354366993'
+lifecycle_stage: active
+run_id: 2f33c5cfe7874f94893021842489f884
+run_name: lyrical-cow-871
+run_uuid: 2f33c5cfe7874f94893021842489f884
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733394367033
+status: 3
+tags: []
+user_id: Chirag

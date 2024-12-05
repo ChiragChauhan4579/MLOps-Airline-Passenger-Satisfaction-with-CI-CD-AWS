@@ -7,19 +7,37 @@ import os
 app = FastAPI()
 
 # Directory where the train.csv file is stored
-DATA_DIR = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/raw"
-CSV_FILE = f"{DATA_DIR}/train.csv"
-LATEST_CSV = f"{DATA_DIR}/train_latest.csv"
-PREVIOUS_CSV = f"{DATA_DIR}/train_previous.csv"
+
+docker_flag = 1
+
+if docker_flag == 1:
+    DATA_DIR = "/app/data/raw"
+    CSV_FILE = f"{DATA_DIR}/train.csv"
+    LATEST_CSV = f"{DATA_DIR}/train_latest.csv"
+    PREVIOUS_CSV = f"{DATA_DIR}/train_previous.csv"
+else:
+    DATA_DIR = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/raw"
+    CSV_FILE = f"{DATA_DIR}/train.csv"
+    LATEST_CSV = f"{DATA_DIR}/train_latest.csv"
+    PREVIOUS_CSV = f"{DATA_DIR}/train_previous.csv"
 
 # Ensure the data directory exists
 os.makedirs(DATA_DIR, exist_ok=True)
 
-@app.get("/get_train_data")
-async def get_train_data():
+@app.get("/get_train_latest")
+async def get_train_latest():
+    # Check if the latest CSV exists
     if not os.path.exists(LATEST_CSV):
         raise HTTPException(status_code=404, detail="train_latest.csv not found.")
     return FileResponse(LATEST_CSV, media_type="text/csv", filename="train_latest.csv")
+
+@app.get("/get_train_previous")
+async def get_train_previous():
+    # Check if the previous CSV exists
+    if not os.path.exists(PREVIOUS_CSV):
+        raise HTTPException(status_code=404, detail="train_previous.csv not found.")
+    return FileResponse(PREVIOUS_CSV, media_type="text/csv", filename="train_previous.csv")
+
 
 @app.post("/add_train_data")
 async def add_train_data(file: UploadFile):
@@ -51,4 +69,4 @@ async def add_train_data(file: UploadFile):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8002)

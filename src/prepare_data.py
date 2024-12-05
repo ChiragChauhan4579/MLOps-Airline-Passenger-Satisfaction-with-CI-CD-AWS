@@ -3,7 +3,12 @@ from sklearn.preprocessing import OrdinalEncoder, LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 import joblib
 
-ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
+docker_flag = 1
+
+if docker_flag == 1:
+    ROOT_URL = "/app/"
+else:
+    ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
 
 # Load dataset
 df = pd.read_csv(ROOT_URL + "data/raw/train_latest.csv")

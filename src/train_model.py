@@ -7,7 +7,12 @@ from datetime import datetime
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score, classification_report , confusion_matrix , precision_score, recall_score, f1_score, classification_report
 
-ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
+docker_flag = 1
+
+if docker_flag == 1:
+    ROOT_URL = "/app/"
+else:
+    ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
 
 X_train = pd.read_csv(ROOT_URL + "data/processed/X_train.csv")
 X_test = pd.read_csv(ROOT_URL + "data/processed/X_test.csv")
