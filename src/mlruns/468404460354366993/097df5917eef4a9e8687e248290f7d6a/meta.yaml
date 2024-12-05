@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/src/mlruns/468404460354366993/097df5917eef4a9e8687e248290f7d6a/artifacts
+end_time: 1733389033299
+entry_point_name: ''
+experiment_id: '468404460354366993'
+lifecycle_stage: active
+run_id: 097df5917eef4a9e8687e248290f7d6a
+run_name: welcoming-quail-723
+run_uuid: 097df5917eef4a9e8687e248290f7d6a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733389023043
+status: 3
+tags: []
+user_id: Chirag

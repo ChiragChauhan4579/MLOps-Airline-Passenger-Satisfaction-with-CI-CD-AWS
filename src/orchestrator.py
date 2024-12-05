@@ -87,7 +87,7 @@ def model_retrain():
 @flow
 def workflow():
 
-    file_path = ROOT_URL + 'data/test.csv'
+    file_path = ROOT_URL + 'data/raw/train_latest.csv'
     df = pd.read_csv(file_path)
     try:
         df.drop(columns=['id'],inplace=True)
@@ -99,7 +99,7 @@ def workflow():
 
         print("Data Validation Passed! Checking for Data Drift")
 
-        baseline_data = pd.read_csv(ROOT_URL + 'data/train.csv')
+        baseline_data = pd.read_csv(ROOT_URL + 'data/raw/train_previous.csv')
         try:
             baseline_data.drop(columns=['id'],inplace=True)
         except Exception as e:

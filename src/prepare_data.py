@@ -6,7 +6,7 @@ import joblib
 ROOT_URL = "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/"
 
 # Load dataset
-df = pd.read_csv(ROOT_URL + "data/raw/train.csv")
+df = pd.read_csv(ROOT_URL + "data/raw/train_latest.csv")
 
 categorical_columns = ['Gender', 'Type of Travel', 'Customer Type', 'Class']
 target_column = 'satisfaction'

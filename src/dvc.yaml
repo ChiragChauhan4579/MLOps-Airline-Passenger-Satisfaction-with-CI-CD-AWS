@@ -2,7 +2,7 @@ stages:
   prepare_data:
     cmd: python "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/src/prepare_data.py"
     deps:
-      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/raw/train.csv"
+      - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/raw/train_latest.csv"
       - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/src/prepare_data.py"
     outs:
       - "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/X_train.csv"

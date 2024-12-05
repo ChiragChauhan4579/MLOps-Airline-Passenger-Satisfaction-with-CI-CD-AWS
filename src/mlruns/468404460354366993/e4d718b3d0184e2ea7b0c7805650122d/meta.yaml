@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/src/mlruns/468404460354366993/e4d718b3d0184e2ea7b0c7805650122d/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '468404460354366993'
+lifecycle_stage: active
+run_id: e4d718b3d0184e2ea7b0c7805650122d
+run_name: merciful-flea-404
+run_uuid: e4d718b3d0184e2ea7b0c7805650122d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733388084234
+status: 1
+tags: []
+user_id: Chirag

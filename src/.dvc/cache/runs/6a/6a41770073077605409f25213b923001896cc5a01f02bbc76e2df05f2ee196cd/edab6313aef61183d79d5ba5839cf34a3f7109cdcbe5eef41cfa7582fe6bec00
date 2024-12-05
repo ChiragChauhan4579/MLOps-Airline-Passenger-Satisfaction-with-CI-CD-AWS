@@ -1,0 +1,30 @@
+cmd: python "C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/src/prepare_data.py"
+deps:
+- path: C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/raw/train.csv
+  md5: 5b639a188e16c9b062f5f9c01527d9a7
+  size: 11369682
+- path: prepare_data.py
+  md5: 7cda676fb90b1ab4cda9a5249586057e
+  size: 1745
+outs:
+- path: C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/X_test.csv
+  md5: 24b2aeae7cfef9a50f7348fd61a9fab2
+  size: 2719309
+- path: C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/X_train.csv
+  md5: c34e2492395ee8be765222f359654d1a
+  size: 10875272
+- path: C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/y_test.csv
+  md5: efc48d90d7a469d887c956137da4fc2f
+  size: 62346
+- path: C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/data/processed/y_train.csv
+  md5: c4152d71ed8669cd82bfe03c058f9efb
+  size: 249372
+- path: C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/encoder.joblib
+  md5: 4c0ed83cec50652d1bcbd7f480627d29
+  size: 1930
+- path: C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/label_encoder.joblib
+  md5: fdfa5f143fe932c897c8c7859121f264
+  size: 564
+- path: C:/Users/Chirag/Desktop/MLOps/MLOps Airline Passenger Satisfaction/model/scaler.joblib
+  md5: 1e691be30d02a9466b53b6db6226fbbd
+  size: 1143

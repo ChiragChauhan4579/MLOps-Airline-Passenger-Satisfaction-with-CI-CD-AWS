@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/src/mlruns/468404460354366993/72ad4c3491b34d81986cbc144386738c/artifacts
+end_time: 1733388038348
+entry_point_name: ''
+experiment_id: '468404460354366993'
+lifecycle_stage: active
+run_id: 72ad4c3491b34d81986cbc144386738c
+run_name: traveling-bear-183
+run_uuid: 72ad4c3491b34d81986cbc144386738c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733388029810
+status: 3
+tags: []
+user_id: Chirag

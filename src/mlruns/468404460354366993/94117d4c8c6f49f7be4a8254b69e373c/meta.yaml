@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Chirag/Desktop/MLOps/MLOps%20Airline%20Passenger%20Satisfaction/src/mlruns/468404460354366993/94117d4c8c6f49f7be4a8254b69e373c/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '468404460354366993'
+lifecycle_stage: active
+run_id: 94117d4c8c6f49f7be4a8254b69e373c
+run_name: magnificent-dog-48
+run_uuid: 94117d4c8c6f49f7be4a8254b69e373c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733389069281
+status: 1
+tags: []
+user_id: Chirag
