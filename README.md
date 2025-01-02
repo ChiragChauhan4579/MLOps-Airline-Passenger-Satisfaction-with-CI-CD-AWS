@@ -11,5 +11,5 @@ Done:
     Script 5: Prefect,MLflow,fastapi with Docker
 
 Next:
-    Prefect agent fix and mlflow ui fix
+    mlflow ui fix
     Script 6: CI/CD AWS with github actions
