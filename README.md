@@ -11,5 +11,7 @@ Done:
     Script 5: Prefect,MLflow,fastapi with Docker
 
 Next:
-    mlflow ui fix
-    Script 6: CI/CD AWS with github actions
+    Script 6: CI/CD AWS with github actions https://www.youtube.com/watch?v=Xniji2m85LY
+
+
+CI/CD flow
