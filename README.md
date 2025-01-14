@@ -34,5 +34,8 @@ CI/CD flow
         * AWS_ACCESS_KEY_ID
         * AWS_SECRET_ACCESS_KEY
         * AWS_REGION
-        * AWS_ECR_LOGIN_URI
+        * AWS_ECR_LOGIN_URI (URI without repo name)
         * ECR_REPOSITORY_NAME
+8. Make a push so the CI/CD pipeline would start running
+9. Don't forget to add inbound rules in security so that you can access the ports
+10. Access the FastAPI endpoint at http://<aws-ip>:<port>
