@@ -1,11 +1,12 @@
 # MLOps Airline Passenger Satisfaction
 
 ## Tools used
-FastAPI, Mlflow, DVC, Evidently AI, Deepchecks, orchestration Prefect, Docker, supervisord,CI/CD (cml) github actions, AWS
+FastAPI, Mlflow, DVC, Evidently AI, Deepchecks, orchestration Prefect, Docker, supervisord,CI/CD github actions, AWS
 
 ## Prerequisites
-- Docker installed on your system.
-- Basic understanding of Python, Prefect, and DVC.
+- Basic Understanding of Docker and Docker installed on your system.
+- Good Understanding of Python, MLflow, Evidently AI, Prefect, and DVC.
+- Cloud understanding (AWS preferably).
 
 ## Components
 
@@ -60,4 +61,14 @@ FastAPI, Mlflow, DVC, Evidently AI, Deepchecks, orchestration Prefect, Docker, s
 
 ## Result images
 
-![actions_1](https://github.com/ChiragChauhan4579/MLOps-Airline-Passenger-Satisfaction)
+![actions_1](https://github.com/ChiragChauhan4579/MLOps-Airline-Passenger-Satisfaction/blob/master/images/actions_1.png)
+
+![actions_2](https://github.com/ChiragChauhan4579/MLOps-Airline-Passenger-Satisfaction/blob/master/images/actions_2.png)
+
+![actions_3](https://github.com/ChiragChauhan4579/MLOps-Airline-Passenger-Satisfaction/blob/master/images/actions_3.png)
+
+![actions_4](https://github.com/ChiragChauhan4579/MLOps-Airline-Passenger-Satisfaction/blob/master/images/actions_4.png)
+
+![fastapi](https://github.com/ChiragChauhan4579/MLOps-Airline-Passenger-Satisfaction/blob/master/images/fastapi.png)
+
+![mlflow](https://github.com/ChiragChauhan4579/MLOps-Airline-Passenger-Satisfaction/blob/master/images/mlflow.png)
