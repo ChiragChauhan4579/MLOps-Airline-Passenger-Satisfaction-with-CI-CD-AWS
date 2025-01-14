@@ -1,22 +1,40 @@
-conda activate mlops_ray
+# MLOps Airline Passenger Satisfaction
 
-MLOps ML with mlflow, dvc, evidently, model retraining, orchestration prefect, docker,CI/CD (cml) github actions
+## Tools used
+FastAPI, Mlflow, DVC, Evidently AI, Deepchecks, orchestration Prefect, Docker, supervisord,CI/CD (cml) github actions, AWS
 
-Done:
-    Model and FastAPI
-    Script 1: new data comes, check validity (deepchecks), data drift and model drift with evidently
-    Script 2: track mlflow, train a new model - XGB
-    Script 3: Get data addition file API endpoint
-    Script 4: DVC
-    Script 5: Prefect,MLflow,fastapi with Docker
+## Prerequisites
+- Docker installed on your system.
+- Basic understanding of Python, Prefect, and DVC.
 
-Push container to Docker Hub (Private, if you don't want to share the code)
+## Components
 
+### 1. FastAPI endpoints
+- Expose an endpoint `/predict` to serve predictions from the trained ML model.
+- Expose an endpoint `/add-data` to allow adding new data to the system.
 
-CI/CD flow
+### 2. Prefect Flow
+- **Data Validation**: Uses Deepchecks to validate new data.
+- **Drift Monitoring**: Uses Evidently to monitor data and model drift.
+- **Model Training**: Triggers DVC pipelines to retrain the model with updated data.
+
+### 3. DVC Flow
+- Defines a pipeline to handle data versioning, preprocessing, training, and evaluation.
+- Integrates with MLflow to log experiments and track performance.
+
+### 4. Dockerized Deployment
+- All components (FastAPI, Prefect, MLflow) are managed in a single Docker container using `supervisord`.
+- Simplifies deployment by eliminating the need for Docker Compose.
+
+## Deployment flow
+
+### Docker Hub
+- Push container to Docker Hub (Private, if you don't want to share the code)
+
+### CI/CD flow
 1. Create User in IAM with EC2 permissions AmazonEC2ContainerRegistryFullAccess and AmazonEC2FullAccess
 2. Create Access keys for user with CLI use case and download csv file.
-3. Go to ECR and create a repository and store the URI of the repository at some place (<user>.dkr.ecr.ap-south-1.amazonaws.com/<repo-name>).
+3. Go to ECR and create a repository and store the URI of the repository at some place ([user].dkr.ecr.ap-south-1.amazonaws.com/[repo-name]).
 4. Create an EC2 instance, preferably linux. Choose machine type, disk space according to your project.
 5. Run update commands
     `sudo apt-get update`
@@ -38,4 +56,8 @@ CI/CD flow
         * ECR_REPOSITORY_NAME
 8. Make a push so the CI/CD pipeline would start running
 9. Don't forget to add inbound rules in security so that you can access the ports
-10. Access the FastAPI endpoint at http://<aws-ip>:<port>
+10. Access the FastAPI endpoint at http://[aws-ip]:[port]
+
+## Result images
+
+![actions_1](https://github.com/ChiragChauhan4579/MLOps-Airline-Passenger-Satisfaction)
