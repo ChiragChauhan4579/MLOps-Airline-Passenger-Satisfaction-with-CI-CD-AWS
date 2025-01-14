@@ -3,6 +3,7 @@ from evidently.report import Report
 from evidently.metrics import DataDriftTable
 import json
 
+
 def datadrift(baseline_data,new_data):
 
     # Define the Data Drift Report
