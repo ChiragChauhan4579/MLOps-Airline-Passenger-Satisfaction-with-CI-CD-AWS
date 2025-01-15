@@ -1,5 +1,7 @@
 # MLOps Airline Passenger Satisfaction
 
+![Main Flow](https://github.com/ChiragChauhan4579/MLOps-Airline-Passenger-Satisfaction/blob/master/images/Airline Passenger Satisfaction.gif)
+
 ## Tools used
 FastAPI, Mlflow, DVC, Evidently AI, Deepchecks, orchestration Prefect, Docker, supervisord,CI/CD github actions, AWS
 
